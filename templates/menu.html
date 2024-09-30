@@ -1,0 +1,82 @@
+<aside class="menu_lateral_tamanho">
+    <section class="menu_lateral">
+        <div class="item_menu">
+            <div class="item_menu_img">
+                <img src="{{ url_for('static', filename='img/icones/logo_renalt.png') }}" alt="Logo Renault">
+            </div>
+            <h1>Renault Risk</h1>
+        </div>
+        <div class="item_menu">
+            <div class="div_busca">
+                <!-- Inserir imagem de busca -->
+                <input type="text" placeholder="Busque por algo.."> 
+            </div>
+        </div>
+        <div class="item_menu">
+            <h1 class="item_title">Home</h1>
+        </div>
+        <div class="item_menu">
+            <div class="item_menu_img">
+                <img src="{{ url_for('static', filename='img/icones/icone_relatorio.png') }}" alt="Logo Relatorios">
+            </div>
+            <h1>Relatorios</h1>
+        </div>
+        <div class="item_menu navegacao" id="link_dashboard">
+            <div class="item_menu_img">
+                <img src="{{ url_for('static', filename='img/icones/icone_dashboard.png') }}" alt="Logo Relatorios">
+            </div>
+            <h1>Dashboard</h1>
+        </div>
+        <div class="item_menu">
+            <h1 class="item_title">Cadastros</h1>
+        </div>
+        <div class="item_menu navegacao" id="link_cadastro_risco">
+            <div class="item_menu_img">
+                <img src="{{ url_for('static', filename='img/icones/icone_risco.png') }}" alt="Logo Relatorios">
+            </div>
+            <h1>Risco</h1>
+        </div>
+
+        <footer>
+            <div class="item_menu navegacao" id="">
+                <div class="item_menu_img">
+                    <img src="{{ url_for('static', filename='img/icones/icone_configuracoes.png') }}" alt="Logo Relatorios">
+                </div>
+                <h1>Risco</h1>
+            </div>
+            <div class="item_menu" id="">
+                <div class="item_menu_img">
+                    <img src="{{ url_for('static', filename='img/icones/icone_usuario.png') }}" alt="Logo Relatorios">
+                </div>
+                <div class="usuario">
+                    <div>
+                        <h2>{{nome_usuario}}</h2>
+                        <h2>administrador</h2>
+                    </div>
+                    <div class="usuario_imagem navegacao" id="link_logout">
+                        <img src="{{ url_for('static', filename='img/icones/icone_sair.png') }}" alt="Logo Relatorios">
+                    </div>
+
+                
+                </div>
+            </div>
+            
+
+        </footer>
+
+        
+    </section>
+
+</aside>
+<script>
+    document.getElementById('link_dashboard').addEventListener('click', function() {
+        window.location.href = '{{ url_for("dashboard") }}'; // Redireciona para a rota definida no Flask
+    });
+    document.getElementById('link_cadastro_risco').addEventListener('click', function() {
+        window.location.href = '{{ url_for("cadastro_risco") }}'; // Redireciona para a rota definida no Flask
+    });
+    document.getElementById('link_logout').addEventListener('click', function() {
+        window.location.href = '{{ url_for("logout") }}'; // Redireciona para a rota definida no Flask
+    });
+    
+</script>

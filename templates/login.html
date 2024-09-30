@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <!-- Link CSS flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+<body>
+    <section class="fundo">
+        <div class="box">
+            
+            <span class="borderLine"></span>
+            <form action="{{ url_for('login') }}" method="POST">
+                <h1>LOGIN</h1>
+                <div class="inputBox">
+                    <input type="text" name="username" required="required">
+                    <span for="">Usuário</span>
+                    <i></i>
+                </div >
+                <div class="inputBox">
+                    <input type="password" name="password" required="required">
+                    <span for="">Senha</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+                <div class="inputButtons">
+                    
+                    <input type="submit" value="Entrar">
+                    <input type="button" value="Cadastar-se">
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

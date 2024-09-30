@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    background-color: #D0D0D0;
+}
+/* NAVEGAÇÃO */
+.navegação{
+    padding: 20px;
+    background-color: lightblue;
+    text-align: center;
+    cursor: pointer; /* Adiciona um ponteiro ao passar o mouse */
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 20px;
+
+}
+
+/* MENU LATERAL */
+.menu_lateral_tamanho{
+    width: 300px;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 25px;
+    
+}
+.menu_lateral{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.item_menu{
+    display: flex;
+    align-items: center;
+}
+.item_menu_img{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.item_menu_img img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.item_title{
+    margin: 10px;
+}
+.div_busca{
+    display: flex;
+    margin: 20px 0px;
+    width: 100%;
+    height: 20px;
+    justify-content: center;
+    
+}
+.div_busca input{
+    width: calc(100% - 6px);
+    font-size: 16pt;
+    box-sizing: border-box;
+
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 30px;
+}
+.usuario{
+    display: flex;
+}
+.usuario h2{
+    font-size: 16px;
+}
+.usuario_imagem{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.usuario img{
+        max-width: 100%;
+        max-height: 100%;
+    
+}

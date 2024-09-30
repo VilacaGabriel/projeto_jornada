@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css')}}">
+    
+    <title>Document</title>
+</head>
+
+<body>
+    {% include 'menu.html'%}
+    <form action="{{ url_for('cadastro_risco') }}" method="POST" class="formulario">
+        <section class="form_cadastro_tamanho">
+            <div class="form_cadastro">
+                <!-- PRIMEIRA COLUNA -->
+                <div class="titulo_form">
+                    <h1>Descrição do Risco</h1>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Risco:</label>
+                    <textarea name="descricao" id=""></textarea>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Tipo de Risco:</label>
+                    <select name="tipo_risco" id="">
+                        <option value=""></option>
+                        <option value="OPERACIONAL">OPERACIONAL</option>
+                        <option value="CONFORMIDADE">CONFORMIDADE</option>
+                        <option value="RECURSOS HUMANOS">RECURSOS HUMANOS</option>
+                        <option value="ESTRATEGIA">ESTRATEGIA</option>
+                        <option value="TECNOLOGIA">TECNOLOGIA</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Area Identificadora:</label>
+                    <select name="area_identificadora" id="">
+                        <option value=""></option>
+                        <option value="APO">APO</option>
+                        <option value="DEA-FOP">DEA-FOP</option>
+                        <option value="DEA-MM">DEA-MM</option>
+                        <option value="DEA-PE">DEA-PE</option>
+                        <option value="DEA-SC">DEA-SC</option>
+                        <option value="DEA-SI/SA/SM">DEA-SI/SA/SM</option>
+                        <option value="DEA-TD">DEA-TD</option>
+                        <option value="DEA-VA">DEA-VA</option>
+                        <option value="DEA-DE">DEA-DE</option>
+                        <option value="DE-VB">DE-VB</option>
+                        <option value="DE-VD">DE-VD</option>
+                        <option value="ICA">ICA</option>
+                        <option value="MARKETING">MARKETING</option>
+                        <option value="SYPPLYCHAIN">SYPPLYCHAIN</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Data Entrada:</label>
+                    <input type="date" name="data_entrada" id="">
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Consequência:</label>
+                    <textarea name="consequencia" id=""></textarea>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Projeto:</label>
+                    <input name="projeto" id=""></textarea>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Metier:</label>
+                    <select name="metier" id="">
+                        <option value=""></option>
+                        <option value="APO">APO</option>
+                        <option value="DEA-FOP">DEA-FOP</option>
+                        <option value="DEA-MM">DEA-MM</option>
+                        <option value="DEA-PE">DEA-PE</option>
+                        <option value="DEA-SC">DEA-SC</option>
+                        <option value="DEA-SI/SA/SM">DEA-SI/SA/SM</option>
+                        <option value="DEA-TD">DEA-TD</option>
+                        <option value="DEA-VA">DEA-VA</option>
+                        <option value="DEA-DE">DEA-DE</option>
+                        <option value="DE-VB">DE-VB</option>
+                        <option value="DE-VD">DE-VD</option>
+                        <option value="ICA">ICA</option>
+                        <option value="MARKETING">MARKETING</option>
+                        <option value="SYPPLYCHAIN">SYPPLYCHAIN</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Jalon:</label>
+                    <select name="jalon" id="">
+                        <option value=""></option>
+                        <option value="PRE-CONCEPT">PRE-CONCEPT</option>
+                        <option value="VPC">VPC</option>
+                        <option value="COST CONFIRMATION">COST CONFIRMATION</option>
+                        <option value="CONTRACT">CONTRACT</option>
+                        <option value="TLC">TLC</option>
+                        <option value="ABVC">ABVC</option>
+                        <option value="ABPT">ABPT</option>
+                        <option value="PPC">PPC</option>
+                        <option value="SOP">SOP</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section class="form_cadastro_tamanho">
+            <div class="form_cadastro">
+                <!-- SEGUNDA COLUNA -->
+                <div class="titulo_form">
+                    <h1>Análise de Qualidade</h1>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Probabilidade:</label>
+                    <select name="probabilidade" id="">
+                        <option value=""></option>
+                        <option value="MUITO BAIXO">MUITO BAIXO</option>
+                        <option value="BAIXO">BAIXO</option>
+                        <option value="MEDIO">MÉDIO</option>
+                        <option value="ALTO">ALTO</option>
+                        <option value="MUITO ALTO">MUITO ALTO</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Impacto:</label>
+                    <select name="impacto" id="">
+                        <option value=""></option>
+                        <option value="MUITO BAIXO">MUITO BAIXO</option>
+                        <option value="BAIXO">BAIXO</option>
+                        <option value="MEDIO">MÉDIO</option>
+                        <option value="ALTO">ALTO</option>
+                        <option value="MUITO ALTO">MUITO ALTO</option>
+                    </select>
+                </div>
+                <div class="titulo_form">
+                    <h1>Plano de Resposta</h1>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Estrategia:</label>
+                    <select name="estrategia" id="">
+                        <option value=""></option>
+                        <option value="EVITAR">EVITAR</option>
+                        <option value="MITIGAR">MITIGAR</option>
+                        <option value="TRANSFERIR">TRANSFERIR</option>
+                        <option value="ACEITAR">ACEITAR</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Ação:</label>
+                    <input name="acao" id=""></input>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Nome Piloto:</label>
+                    <input name="nome_piloto" id=""></input>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Id Piloto:</label>
+                    <input name="id_piloto" id=""></input>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Data Resposta:</label>
+                    <input type="date" name="data_resposta" id="">
+                </div>
+                <div class="item_form item_botoes">
+                    <button class="cadastro_botoes">LIMPAR</button>
+                    <button class="cadastro_botoes">SALVAR</button>
+                </div>
+
+
+                
+            </div>
+        </section>
+        <section class="form_cadastro_tamanho">
+            <div class="form_cadastro">
+                <!-- TERCEIRA COLUNA  -->
+                <div class="titulo_form">
+                    <h1>Plano de Resposta</h1>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Data Alerta:</label>
+                    <input type="date" name="data_alerta" id="">
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Comentários:</label>
+                    <textarea name="comentarios" id=""></textarea>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Probabilidade Residual:</label>
+                    <select name="probabilidade_residual" id="">
+                        <option value=""></option>
+                        <option value="VERY LOW">VERY LOW</option>
+                        <option value="LOW">LOW</option>
+                        <option value="MEDIUM">MEDIUM</option>
+                        <option value="HIGH">HIGH</option>
+                        <option value="VERY HIGH">VERY HIGH</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Impacto Residual:</label>
+                    <select name="impacto_residual" id="">
+                        <option value=""></option>
+                        <option value="MUITO BAIXO">MUITO BAIXO</option>
+                        <option value="BAIXO">BAIXO</option>
+                        <option value="MEDIO">MEDIO</option>
+                        <option value="ALTO">ALTO</option>
+                        <option value="MUITO ALTO">MUITO ALTO</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Ação de Validação:</label>
+                    <select name="acao_validacao" id="">
+                        <option value=""></option>
+                        <option value="EM RISCO">EM RISCO</option>
+                        <option value="ENCAMINHADO">ENCAMINHADO</option>
+                        <option value="RESULVIDO">RESULVIDO</option>
+                        <option value="SEM APLICACAO">SEM APLICAÇÃO</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Risco de Validação:</label>
+                    <select name="risco_validacao" id="">
+                        <option value=""></option>
+                        <option value="EM RISCO">EM RISCO</option>
+                        <option value="ENCAMINHADO">ENCAMINHADO</option>
+                        <option value="RESULVIDO">RESULVIDO</option>
+                        <option value="SEM APLICACAO">SEM APLICAÇÃO</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Data Resolução:</label>
+                    <input type="date" name="data_resolucao" id="">
+                </div>
+                <hr>
+                <div class="item_form">
+                    <label for="">Capitalização:</label>
+                    <select name="capitalizacao" id="">
+                        <option value=""></option>
+                        <option value="SIM">SIM</option>
+                        <option value="NAO">NÃO</option>
+                    </select>
+                </div>
+                
+            </div>
+        </section>
+    </form>
+    
+</body>
+
+</html>
