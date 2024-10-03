@@ -1,15 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import pymysql
+import psycopg2
 
 app = Flask(__name__)
-app.secret_key = 'colocara_alguna_coisa'
+app.secret_key = 'colocara_alguma_coisa'
 
-# Configuração do banco de dados MySQL
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost/risco_db'
+# Configuração do banco de dados PostgreSQL
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://usuario:senha@localhost/risco_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
 
 # Modelo para a tabela de Risco
 class Risco(db.Model):
