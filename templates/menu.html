@@ -1,5 +1,5 @@
 <aside class="menu_lateral_tamanho">
-    <section class="menu_lateral">
+    <section class="menu_lateral" id="menu">
         <div class="item_menu">
             <div class="item_menu_img">
                 <img src="{{ url_for('static', filename='img/icones/logo_renalt.png') }}" alt="Logo Renault">
@@ -7,8 +7,8 @@
             <h1>Renault Risk</h1>
         </div>
         <div class="item_menu">
-            <div class="div_busca">
-                <!-- Inserir imagem de busca -->
+            <div class="div_busca navegacao" >
+                <!-- TODO: Inserir imagem de busca -->
                 <input type="text" placeholder="Busque por algo.."> 
             </div>
         </div>
@@ -78,5 +78,11 @@
     document.getElementById('link_logout').addEventListener('click', function() {
         window.location.href = '{{ url_for("logout") }}'; // Redireciona para a rota definida no Flask
     });
+    // document.getElementById('menu').addEventListener('mouseover', function(){
+    //     const menu = document.querySelector('.menu_lateral_tamanho');
+    //     menu.classList.toggle('menu_fechado')
+    
+
+    // })
     
 </script>

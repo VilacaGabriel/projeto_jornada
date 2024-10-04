@@ -45,6 +45,7 @@ body{
     margin: 10px;
     align-items: center;
     justify-content: center;
+
 }
 .item_menu_img img{
     max-width: 100%;
@@ -91,3 +92,12 @@ footer{
         max-height: 100%;
     
 }
+/* MENU FECHADO */
+/* .menu_fechado{
+    width: 120px;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 25px;
+
+} */
