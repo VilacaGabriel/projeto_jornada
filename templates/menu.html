@@ -72,12 +72,12 @@
     document.getElementById('link_logout').addEventListener('click', function() {
         window.location.href = '{{ url_for("logout") }}'; // Redireciona para a rota definida no Flask
     });
-    // document.getElementById('menu').addEventListener('mouseover', function(){
-    //     const menu = document.querySelector('.menu_lateral_tamanho');
-    //     menu.classList.toggle('menu_fechado');
-    //     menu.classList.toggle('itens_menu_fechado');
+    document.getElementById('menu').addEventListener('mouseover', function(){
+        const menu = document.querySelector('.menu_lateral_tamanho');
+        menu.classList.toggle('menu_fechado');
+        menu.classList.toggle('itens_menu_fechado');
 
 
-    // })
+    })
     
 </script>

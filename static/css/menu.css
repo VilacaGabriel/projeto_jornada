@@ -93,7 +93,7 @@ footer{
     
 }
 /* MENU FECHADO */ 
-/* .menu_fechado{
+.menu_fechado{
     width: 120px;
     height: 100vh;
     overflow: hidden;
@@ -102,4 +102,4 @@ footer{
 }
 .itens_menu_fechado h1{
     display: none;
-} */
+}
