@@ -92,12 +92,14 @@ footer{
         max-height: 100%;
     
 }
-/* MENU FECHADO */
+/* MENU FECHADO */ 
 /* .menu_fechado{
     width: 120px;
     height: 100vh;
     overflow: hidden;
     box-sizing: border-box;
     padding: 25px;
-
+}
+.itens_menu_fechado h1{
+    display: none;
 } */
