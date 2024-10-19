@@ -1,5 +1,8 @@
 <aside class="menu_lateral_tamanho">
     <section class="menu_lateral" id="menu">
+        <div class="item_menu_img esconde_menu">
+            <img src="{{ url_for('static', filename='img/icones/icone_menu.png') }}" alt="Logo Renault">
+        </div>
         <div class="item_menu">
             <div class="item_menu_img">
                 <img src="{{ url_for('static', filename='img/icones/logo_renalt.png') }}" alt="Logo Renault">
@@ -42,7 +45,7 @@
                 <div class="item_menu_img">
                     <img src="{{ url_for('static', filename='img/icones/icone_configuracoes.png') }}" alt="Logo Relatorios">
                 </div>
-                <h1>Risco</h1>
+                <h1>Configuração</h1>
             </div>
             <div class="item_menu" id="">
                 <div class="item_menu_img">
@@ -72,12 +75,5 @@
     document.getElementById('link_logout').addEventListener('click', function() {
         window.location.href = '{{ url_for("logout") }}'; // Redireciona para a rota definida no Flask
     });
-    document.getElementById('menu').addEventListener('mouseover', function(){
-        const menu = document.querySelector('.menu_lateral_tamanho');
-        menu.classList.toggle('menu_fechado');
-        menu.classList.toggle('itens_menu_fechado');
-
-
-    })
     
 </script>

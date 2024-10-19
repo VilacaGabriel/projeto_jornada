@@ -34,6 +34,11 @@ body{
     border-radius: 30px;
     overflow: hidden;
 }
+.esconde_menu{
+    position: absolute;
+    left: 210px;
+}
+
 .item_menu{
     display: flex;
     align-items: center;
@@ -102,4 +107,8 @@ footer{
 }
 .itens_menu_fechado h1{
     display: none;
+}
+.formulario_maior{
+    width: calc(100% - 120px);
+    display: flex;
 }
