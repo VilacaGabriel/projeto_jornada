@@ -1,0 +1,39 @@
+.area_conteudo{
+    width: calc(100% - 300px);
+    display: flex;
+}
+.fundo{
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 25px;
+    background-color: white;
+    overflow-x: auto;
+}
+.filtros{
+    height: 200px;
+
+}
+table{
+    width: 5000px;
+    border: 1px solid black;
+    border-radius: 20px;
+    border-collapse: collapse;
+
+}
+th{
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+    
+}
+td{
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+
+
+    
+}

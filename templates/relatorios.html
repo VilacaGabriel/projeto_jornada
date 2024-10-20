@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>relatorios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/relatorios.css')}}">
+
+</head>
+
+<body>
+    {% include 'menu.html'%}
+    <section class="area_conteudo">
+        <div class="fundo">
+            <div class="filtros">
+                filtros
+
+            </div>
+            <table>
+                <theard>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Linha</th>
+                        <th>Risco</th>
+                        <th>Tipo</th>
+                        <th>Area Identificação</th>
+                        <th>Data Entrada</th>
+                        <th>Consequência</th>
+                        <th>Projeto</th>
+                        <th>Metier</th>
+                        <th>Jalon</th>
+                        <th>Probabilidade</th>
+                        <th>Impacto</th>
+                        <th>Estrategia</th>
+                        <th>Ação</th>
+                        <th>Nome Piloto</th>
+                        <th>Id Piloto</th>
+                        <th>Data Inicial</th>
+                        <th>Data de Alerta</th>
+                        <th>Probabilidade</th>
+                        <th>Impacto Residual</th>
+                        <th>Ação de Validação</th>
+                        <th>Data de Resolução</th>
+                        <th>Status</th>
+                        <th>Capitalização</th>
+                    </tr>
+                </theard>
+                <tbody>
+                    {% for risco in riscos %}
+                    <tr>
+                        <td style="width: 50px;"></td>
+                        <td style="width: 50px;"></td>
+                        <td>{{ risco.descricao }}</td>
+                        <td>{{ risco.tipo_risco }}</td>
+                        <td>{{ risco.area_identificadora }}</td>
+                        <td>{{ risco.data_entrada }}</td>
+                        <td>{{ risco.consequencia }}</td>
+                        <td>{{ risco.projeto }}</td>
+                        <td>{{ risco.metier }}</td>
+                        <td>{{ risco.jalon }}</td>
+                        <td>{{ risco.probabilidade }}</td>
+                        <td>{{ risco.impacto }}</td>
+                        <td>{{ risco.estrategia }}</td>
+                        <td>{{ risco.acao }}</td>
+                        <td>{{ risco.nome_piloto }}</td>
+                        <td>{{ risco.id_piloto }}</td>
+                        <td>{{ risco.data_resposta }}</td>
+                        <td>{{ risco.data_alerta }}</td>
+                        <td>{{ risco.probabilidade_residual }}</td>
+                        <td>{{ risco.impacto_residual }}</td>
+                        <td>{{ risco.acao_validacao }}</td>
+                        <td>{{ risco.risco_validacao }}</td>
+                        <td>{{ risco.data_resolucao }}</td>
+                        <td>{{ risco.capitalizacao }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script>
+
+    </script>
+
+</body>
+
+</html>
+

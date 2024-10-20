@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import pymysql
 
+# Inicia o app
 app = Flask(__name__)
 app.secret_key = 'colocara_alguna_coisa'
 
@@ -44,7 +45,7 @@ with app.app_context():
 
 USUARIO = "admin"
 SENHA = "admin"
-
+# rotas de paginas
 @app.route('/')
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -59,7 +60,15 @@ def login():
             erro = 'Usuário ou senha incorretos. Tente novamente.'
             return render_template('login.html', erro=erro)
     return render_template('login.html')
-123
+
+@app.route('/relatorios')
+def relatorios():
+    nome_usuario = USUARIO
+    riscos = Risco.query.all()
+    if 'user' in session:
+        return render_template('relatorios.html', nome_usuario=nome_usuario, riscos=riscos)
+    else:
+        return redirect(url_for('login'))
 
 @app.route('/dashboard')
 def dashboard():
@@ -75,11 +84,7 @@ def cadastro_risco():
         if request.method == 'POST':
             try:
                 # Validação de campos obrigatórios
-                required_fields = ['descricao', 'tipo_risco', 'area_identificadora', 'data_entrada', 'consequencia',
-                                   'projeto', 'metier', 'jalon', 'probabilidade', 'impacto', 'estrategia', 
-                                   'acao', 'nome_piloto', 'id_piloto', 'data_resposta', 'data_resolucao', 
-                                   'data_alerta', 'probabilidade_residual', 'impacto_residual', 
-                                   'acao_validacao', 'risco_validacao', 'capitalizacao']
+                required_fields = ['descricao', 'tipo_risco', 'area_identificadora', 'data_entrada', 'consequencia', 'projeto', 'metier', 'jalon', 'probabilidade', 'impacto', 'estrategia', 'acao', 'nome_piloto', 'id_piloto', 'data_resposta', 'data_resolucao', 'data_alerta', 'probabilidade_residual', 'impacto_residual', 'acao_validacao', 'risco_validacao', 'capitalizacao']
                 
                 for field in required_fields:
                     if field not in request.form or request.form[field] == '':
@@ -129,6 +134,7 @@ def cadastro_risco():
         return render_template('cadastro_risco.html')
     else:
         return redirect(url_for('login'))
+    
 
 @app.route('/logout')
 def logout():

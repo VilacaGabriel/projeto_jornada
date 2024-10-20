@@ -1,8 +1,5 @@
 <aside class="menu_lateral_tamanho">
     <section class="menu_lateral" id="menu">
-        <div class="item_menu_img esconde_menu">
-            <img src="{{ url_for('static', filename='img/icones/icone_menu.png') }}" alt="Logo Renault">
-        </div>
         <div class="item_menu">
             <div class="item_menu_img">
                 <img src="{{ url_for('static', filename='img/icones/logo_renalt.png') }}" alt="Logo Renault">
@@ -10,23 +7,24 @@
             <h1>Renault Risk</h1>
         </div>
         <div class="item_menu">
-            <div class="div_busca navegacao" >
+            <div class="div_busca navegacao">
                 <!-- TODO: Inserir imagem de busca -->
-                <input type="text" placeholder="Busque por algo.."> 
+                <input type="text" placeholder="Busque por algo..">
             </div>
         </div>
         <div class="item_menu">
             <h1 class="item_title">Home</h1>
         </div>
-        <div class="item_menu">
+        <div class="item_menu navegacao" id="link_relatorios">
             <div class="item_menu_img">
-                <img src="{{ url_for('static', filename='img/icones/icone_relatorio.png') }}" alt="Logo Relatorios">
+                <img src="{{ url_for('static', filename='img/icones/icone_relatorio.png') }}"
+                    alt="Icomne de Relatorios">
             </div>
             <h1>Relatorios</h1>
         </div>
         <div class="item_menu navegacao" id="link_dashboard">
             <div class="item_menu_img">
-                <img src="{{ url_for('static', filename='img/icones/icone_dashboard.png') }}" alt="Logo Relatorios">
+                <img src="{{ url_for('static', filename='img/icones/icone_dashboard.png') }}" alt="Icone de dashboard">
             </div>
             <h1>Dashboard</h1>
         </div>
@@ -35,7 +33,8 @@
         </div>
         <div class="item_menu navegacao" id="link_cadastro_risco">
             <div class="item_menu_img">
-                <img src="{{ url_for('static', filename='img/icones/icone_risco.png') }}" alt="Logo Relatorios">
+                <img src="{{ url_for('static', filename='img/icones/icone_risco.png') }}"
+                    alt="Icone para cadastro de risco">
             </div>
             <h1>Risco</h1>
         </div>
@@ -43,13 +42,14 @@
         <footer>
             <div class="item_menu navegacao" id="">
                 <div class="item_menu_img">
-                    <img src="{{ url_for('static', filename='img/icones/icone_configuracoes.png') }}" alt="Logo Relatorios">
+                    <img src="{{ url_for('static', filename='img/icones/icone_configuracoes.png') }}"
+                        alt="Icone de Configuração">
                 </div>
                 <h1>Configuração</h1>
             </div>
             <div class="item_menu" id="">
                 <div class="item_menu_img">
-                    <img src="{{ url_for('static', filename='img/icones/icone_usuario.png') }}" alt="Logo Relatorios">
+                    <img src="{{ url_for('static', filename='img/icones/icone_usuario.png') }}" alt="Foto do usuario">
                 </div>
                 <div class="usuario">
                     <div>
@@ -57,23 +57,72 @@
                         <h2>administrador</h2>
                     </div>
                     <div class="usuario_imagem navegacao" id="link_logout">
-                        <img src="{{ url_for('static', filename='img/icones/icone_sair.png') }}" alt="Logo Relatorios">
+                        <img src="{{ url_for('static', filename='img/icones/icone_sair.png') }}" alt="Icone de sair">
                     </div>
                 </div>
-            </div> 
+            </div>
         </footer>
     </section>
 
 </aside>
 <script>
-    document.getElementById('link_dashboard').addEventListener('click', function() {
+    const menu = document.getElementById('menu');
+    const icone_logout = document.getElementById('link_logout');
+    const itens_menu = document.getElementsByClassName('item_menu');
+    const tamanho_menu = document.getElementsByClassName('menu_lateral_tamanho');
+    const tamnho_cadastro = document.getElementsByClassName('formulario');
+    const area_conteudo = document.getElementsByClassName('area_conteudo');
+
+    // REDIRECIONAMENTOS
+    // relatorios
+    document.getElementById('link_relatorios').addEventListener('click', function () {
+        window.location.href = '{{ url_for("relatorios") }}'; // Redireciona para a rota definida no Flask
+    });
+
+    // dashboard
+    document.getElementById('link_dashboard').addEventListener('click', function () {
         window.location.href = '{{ url_for("dashboard") }}'; // Redireciona para a rota definida no Flask
     });
-    document.getElementById('link_cadastro_risco').addEventListener('click', function() {
+    // cadastro de riscos
+    document.getElementById('link_cadastro_risco').addEventListener('click', function () {
         window.location.href = '{{ url_for("cadastro_risco") }}'; // Redireciona para a rota definida no Flask
     });
-    document.getElementById('link_logout').addEventListener('click', function() {
+    //configuração
+    //TODO: fazer modal para definir configuraçoes da pagina
+    //tela de usuraio
+    //TODO: fazer tela para definir configuraçoes da personalizada do usuario
+    // logout
+    document.getElementById('link_logout').addEventListener('click', function () {
         window.location.href = '{{ url_for("logout") }}'; // Redireciona para a rota definida no Flask
     });
-    
+
+    // FUNCIONABILIDADES DO MENU
+    document.getElementById('menu').addEventListener('mouseout', function () {
+        for (let i = 0; i < tamnho_cadastro.length; i++) {
+            tamnho_cadastro[i].classList.add('formulario_maior');
+        };
+        for (let i = 0; i < itens_menu.length; i++) {
+            itens_menu[i].classList.add('itens_menu_fechado');
+        };
+        menu.classList.add('menu_fechado');
+        icone_logout.classList.add('logout_fechado');
+        tamanho_menu[0].classList.add('tamanho_aside');
+        area_conteudo[0].classList.add('formulario_maior');
+    });
+
+    document.getElementById('menu').addEventListener('mouseover', function () {
+        for (let i = 0; i < tamnho_cadastro.length; i++) {
+            tamnho_cadastro[i].classList.remove('formulario_maior');
+        };
+        for (let i = 0; i < itens_menu.length; i++) {
+            itens_menu[i].classList.remove('itens_menu_fechado');
+        };
+        menu.classList.remove('menu_fechado');
+        icone_logout.classList.remove('logout_fechado');
+        tamanho_menu[0].classList.remove('tamanho_aside');
+        area_conteudo[0].classList.remove('formulario_maior');
+
+    });
+
+
 </script>
